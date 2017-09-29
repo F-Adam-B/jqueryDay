@@ -1,24 +1,24 @@
 // create function when adding an item
 
-    $('form:third-child').closest('ul').click(function() {
+    $('button').click(function() {
         // call form element and apply submit method
        $('form').submit(function(event) {
         const newItem = $('.shopping-list').prepend('<li> does this work');
         event.preventDefault(); 
-        newItem.addClass('shopping-item ');    
+        // newItem.addClass('shopping-item ');   
        });     
-    
+    });
 // delete shopping item after clicking delete
     $('button.shopping-item-delete').click(function() {
-            $(this).remove();
+            $(this).closest('li').remove();
     })
 
-// strikethrough list item once check button clicked
+// // strikethrough list item once check button clicked
 
-    $('shopping-item-toggle').click(function() {
-        $('shopping-item').addClass('.shopping-item__checked');
+//     $('shopping-item-toggle').click(function() {
+//         $('shopping-item').addClass('.shopping-item__checked');
     
-});
+// });
 
 
 
