@@ -18,7 +18,7 @@ const STORE = [
           </button>
         </div>
       </li>`;
-  }
+  };
   
   
   function generateShoppingItemsString(shoppingList) {
@@ -96,7 +96,25 @@ const STORE = [
     // deletes list item form list
     console.log('`deleteListItem` ran')
   };
+
+  function handleShoppingItemClicked() {
+    $('shopping-item').on('click', event => {
+      const itemIndex = getItemIndexFromElement(event.currentTarget);
+      // add edit title function(itemIndex);
+      inputEndUserTitle(itemIndex);
+    })
+  }
   
+  function inputEndUserTitle(index) {
+    const newTitle = $('<textarea />');
+    $('.shopping-item').replaceWith(newTitle);
+  }
+
+  function pinUncheckedListItems() {
+    const pin = $('#form').append('<button>Pin</button>').addClass('.button')
+
+  }
+
   function handleShoppingList() {
     renderShoppingList();
     handleNewItemSubmit();
