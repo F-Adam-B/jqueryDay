@@ -16,7 +16,7 @@ const STORE = [
           <button class="shopping-item-delete js-item-delete">
               <span class="button-label">delete</span>
           </button>
-        </div>
+        </div> 
       </li>`;
   };
   
@@ -97,6 +97,8 @@ const STORE = [
     console.log('`deleteListItem` ran')
   };
 
+
+  // listens for click on shopping item titles.
   function handleShoppingItemClicked() {
     $('shopping-item').on('click', event => {
       const itemIndex = getItemIndexFromElement(event.currentTarget);
@@ -105,14 +107,23 @@ const STORE = [
     })
   }
   
+
+  // replaces shoppint item text with text area for new title 
   function inputEndUserTitle(index) {
     const newTitle = $('<textarea />');
     $('.shopping-item').replaceWith(newTitle);
   }
 
-  function pinUncheckedListItems() {
-    const pin = $('#form').append('<button>Pin</button>').addClass('.button')
 
+  
+  // $('#form').append('<button type = submit>Pin</button>').addClass('.button')
+  
+  // listens for click of 'In Cart' button and appends deleted items
+  function clickUncheckedListItems() {
+    $('#form secondchild').on('click', event => {
+      //appends list of deleted items
+      $('#form').append(deletedListItem);
+    })
   }
 
   function handleShoppingList() {
